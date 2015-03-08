@@ -1,0 +1,76 @@
+
+   <head>
+    <title>Feed Baby</title>
+  </head>
+
+<body>
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="#">Feed BABY</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USER<!--{{currentUser.username}} --><span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">{{ >loginButtons }}</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Weight</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+  </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Keeping Track of BABY</h1>
+
+        <p class="lead">Keep track of baby feeds, sleeps, and changes on one page<br> Tap and record</p>
+        <div>
+            <label for="amount">Volume:</label>
+            <input type="number" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <button class="milk-amount">FEED</button>
+            <div id="feed_amount" style="height:200px;"></div>
+            <span class="text"><strong><!-- last time and amount --></strong></span>
+            {{>barChart}}
+
+        </div>
+      </div>
+      <ul>
+        {{#each getFeeds}}
+          {{>feed}}
+        {{/each}}
+      </ul>
+    </div>
+</body>
+
+<template name="feed">
+    <li>
+    <span class="text"><strong>{{createdAt}}</strong>- {{amount}}</span>
+  </li>
+</template>
+
+<template name="barChart">
+  <div id="barChart"></div>
+
+</template>
+
+<!--
+<template name="d3vis">
+  <div class="d3board" height="150px" width="600px">
+    <svg id="d3vis"></svg>
+  </div>
+</template>
+-->
+
