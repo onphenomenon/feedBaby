@@ -4,7 +4,26 @@ body { padding-top: 70px; }
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
-	background: linear-gradient(45deg, green, white);
+	background: linear-gradient(45deg, #3c3, white);
 	border: none;
 	font-size: 3em;
+	color: #eee;
+}
+
+.poop:active {
+	background: linear-gradient(45deg, #093, #E6F5EB);
+}
+
+.sleep {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background: linear-gradient(45deg, #39f, white);
+	font-size: 3em;
+	color: #eee;
+	border: none;
+}
+
+.sleep:active {
+	background: linear-gradient(45deg, blue, #e6f5EB);
 }
