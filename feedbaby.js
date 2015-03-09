@@ -14,6 +14,7 @@ Meteor.startup(function(){
 
 if(Meteor.isClient){
   Meteor.subscribe("feeds");
+  Meteor.subscribe("poopies");
 
   Template.body.rendered = function(){
 
@@ -143,6 +144,10 @@ if(Meteor.isClient){
       //console.log(this);
       return false;
 
+    },
+    'click .poop': function(event) {
+      Meteor.call("addPoop");
+        return false;
     }
   });
 

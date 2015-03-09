@@ -13,5 +13,12 @@ Meteor.methods({
     });
 
 
+  },
+  addPoop: function() {
+
+    Poopies.insert({
+      createdAt: new Date(),
+      owner: Meteor.userId()
+    });
   }
-})
+});

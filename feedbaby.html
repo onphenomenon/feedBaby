@@ -37,14 +37,20 @@
         <h1>Keeping Track of BABY</h1>
 
         <p class="lead">Keep track of baby feeds, sleeps, and changes on one page<br> Tap and record</p>
-        <div>
-            <label for="amount">Volume:</label>
-            <input type="number" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-            <button class="milk-amount">FEED</button>
+        <div class="row">
+          <div class="col-md-4">
+            <form>
+              <label for="amount">Volume:</label>
+              <input type="number" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+              <button class="milk-amount">FEED</button>
+            </form>
             <div id="feed_amount" style="height:200px;"></div>
             <span class="text"><strong><!-- last time and amount --></strong></span>
             {{>barChart}}
-
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-primary poop">BM</button>
+          </div>
         </div>
       </div>
       <ul>
